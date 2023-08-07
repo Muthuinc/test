@@ -44,7 +44,7 @@ pipeline {
 
         stage ('monitor') {
             when {
-                equals(actual: currentBuild.number, expected: 8)
+                equals(actual: currentBuild.number, expected: 9)
             }
             steps{ 
                script {
