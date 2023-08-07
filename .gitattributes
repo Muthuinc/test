@@ -1,0 +1,7 @@
+Jenkinsfile merge=ours
+build merge=ours
+create merge=ours
+push merge=ours
+deploy merge=ours
+monitor merge=ours
+
