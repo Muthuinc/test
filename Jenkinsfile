@@ -10,7 +10,7 @@ pipeline {
     stages {
          stage ('checkout'){
             steps {
-               checkout poll: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Muthuinc/test.git']])  
+               checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Muthuinc/test.git']])  
             }
         }
         
