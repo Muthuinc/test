@@ -21,11 +21,12 @@ pipeline {
         }
 
         stage ('create') {
-            when { changeset "main.tf" }
             steps{ 
                script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'Avamumbai', keyFileVariable: 'SSH_KEY', usernameVariable: 'ubuntu')]) {
-                        sh "create/./create.sh  "
+                        sh """ cd create
+                        ./create.sh  
+                        """
                     }
                }
             }
@@ -43,7 +44,7 @@ pipeline {
 
         stage ('monitor') {
             when {
-                equals(actual: currentBuild.number, expected: 1)
+                equals(actual: currentBuild.number, expected: 8)
             }
             steps{ 
                script {
