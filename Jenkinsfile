@@ -49,7 +49,9 @@ pipeline {
             steps{ 
                script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'Avamumbai', keyFileVariable: 'SSH_KEY', usernameVariable: 'ubuntu')]) {
-                        sh "monitor/./monitor.sh  "
+                       sh """ cd monitor
+                        ./monitor.sh  
+                        """
                     }
                }
             }
