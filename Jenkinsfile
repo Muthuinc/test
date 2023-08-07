@@ -43,9 +43,9 @@ pipeline {
         }
 
         stage ('monitor') {
-            when {
-                equals(actual: currentBuild.number, expected: 19)
-            }
+            //when {
+                //equals(actual: currentBuild.number, expected: 19)
+            //}
             steps{ 
                script {
                     withCredentials([sshUserPrivateKey(credentialsId: 'Avamumbai', keyFileVariable: 'SSH_KEY', usernameVariable: 'ubuntu')]) {
