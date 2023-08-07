@@ -7,13 +7,7 @@ pipeline {
          GIT_COMMIT = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
     }
 
-    stages {
-         stage ('checkout'){
-            steps {
-               checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Muthuinc/test.git']])  
-            }
-        }
-        
+    stages { 
         stage ('build') {
             steps {
                 sh 'build/./build.sh'         
