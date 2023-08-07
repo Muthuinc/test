@@ -2,6 +2,7 @@
 
 
 
+
 a=$(aws ec2 describe-instances --region ap-south-1 --filters "Name=tag:Env,Values=prod" --query 'Reservations[].Instances[].PublicIpAddress' --output text)
 
 #sed -i "s/EC2_ip/$a/g" prometheus.yml

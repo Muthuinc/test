@@ -4,5 +4,6 @@
 
 docker build -t muthuinc/reactprod2:"${GIT_COMMIT}" .
 
+
 echo "success"
 

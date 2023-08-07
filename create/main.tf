@@ -68,7 +68,6 @@ resource "aws_instance" "instance1" {
   associate_public_ip_address = true
   vpc_security_group_ids = [ aws_security_group.allow_tls.id ]
   tags = {
-    
     Env = "prod"
   }
 }
